@@ -1,0 +1,19 @@
+.social {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center
+}
+
+.social a {
+    margin-bottom: .5em
+}
+
+.social li i {
+    font-size: 34px
+}
+
+.dark .social [class^="icon-"],.dark * .social [class^="icon-"] {
+    color: #f6f6f6
+}
