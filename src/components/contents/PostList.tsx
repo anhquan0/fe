@@ -1,13 +1,13 @@
 import React from "react";
 import { PostsLabelGroup } from "./PostLabelGroup";
-import { Post } from "./Post";
+import { PostItem } from "./PostItem";
 
-export const Posts = () => {
+export const PostList = () => {
     return (
         <section className="content">
             <ul className="posts">
                 <PostsLabelGroup></PostsLabelGroup>
-                <Post></Post>
+                <PostItem></PostItem>
             </ul>
         </section>
     )

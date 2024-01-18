@@ -8,7 +8,6 @@ export const DarkMode: React.FC = () => {
 
     function changeTheme() {
         themeContext?.setTheme(!themeContext.theme)
-
     }
 
     return (

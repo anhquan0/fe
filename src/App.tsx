@@ -2,12 +2,17 @@ import React, { useContext, useEffect } from 'react';
 import { About } from './components/about/About';
 import { ThemeContextType } from './types/general/ThemeThemeType';
 import { ThemeContext } from './context/ThemeProvider';
-import { Route, Routes } from 'react-router-dom';
-import { Posts } from './components/contents/Posts';
+import { RouterProvider, createBrowserRouter } from 'react-router-dom';
+import { PostList } from './components/contents/PostList';
 
 
 const App: React.FC = () => {
   const themeContext: ThemeContextType | null = useContext(ThemeContext)
+
+  const router = createBrowserRouter([
+    {path: "/", element: <><About></About><PostList></PostList></>},
+    {path: "/login", element: <><About></About></>}
+  ])
 
   useEffect(() => {
     if(themeContext?.theme) {
@@ -18,8 +23,7 @@ const App: React.FC = () => {
 
   return (
     <main className='container'>
-        <About></About>
-        <Posts></Posts>
+      <RouterProvider router={router}></RouterProvider>
     </main>
   );
 }
